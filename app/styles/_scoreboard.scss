@@ -8,7 +8,7 @@
 	margin-left: em(-200px);
 	box-sizing: border-box;
 
-	background: purple;
+	background-image: url('../images/paparazzi.jpg');
 	text-align: center;
 
 	// Keep it off-screen
@@ -29,7 +29,7 @@
 	font-size: inherit;
 	padding: em(4px) em(15px);
 	border: em(2px) solid white;
-	background: none;
+	background-image: url('../images/paparazzi.jpg');
 	cursor: pointer;
 }
 
