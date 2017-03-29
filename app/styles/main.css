@@ -73,4 +73,6 @@ overflow: hidden;
 background-image: url('../images/ground.png');
 background-image: url('../images/cityLandscape.png');
 background-repeat: no-repeat;
+background-position-y: 24em;
+background-repeat: no-repeat;
 }
