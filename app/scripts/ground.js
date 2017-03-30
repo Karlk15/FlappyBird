@@ -12,7 +12,7 @@ window.Ground = (function() {
     Ground.prototype.onFrame = function(delta) {
         this.pos.x -= delta * SPEED;
 
-        if(this.pos.x <= -300) {
+        if(this.pos.x <= -320) {
             this.pox.x = 0;
         }
 

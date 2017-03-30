@@ -104,7 +104,7 @@ background-size: cover;
 	z-index: 1;
 	position: absolute;
 	height: 53em;
-	right: -600em;
+	right: -640em;
 	left: -200em;
 	background: url('../images/cityLandscape.png') repeat-x;
 	background-size: auto 100%;
@@ -120,7 +120,7 @@ background-size: cover;
 		transform: translateZ(0) translateX(0);
 	}
 	100% {
-		transform: translateZ(0) translateX(-60em);
+		transform: translateZ(0) translateX(-64em);
 	}
 }
 
