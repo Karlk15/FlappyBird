@@ -68,7 +68,8 @@ window.Game = (function() {
 	 */
 	Game.prototype.gameover = function() {
 		this.isPlaying = false;
-
+		var audio = new Audio('../audio/IamaGod.mp3');
+		audio.play();
 		// Should be refactored into a Scoreboard class.
 		var that = this;
 		var scoreboardEl = this.el.find('.Scoreboard');
@@ -89,5 +90,3 @@ window.Game = (function() {
 
 	return Game;
 })();
-
-
