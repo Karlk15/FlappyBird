@@ -93,7 +93,7 @@ background-size: cover;
 	background-size: auto 100%;
 	-webkit-animation: ground;
 	-webkit-animation-timing-function: linear;
-	-webkit-animation-duration: 2s;
+	-webkit-animation-duration: 3.9s;
 	-webkit-animation-iteration-count: infinite;
 	transform: translateZ(0);
 
