@@ -1,4 +1,5 @@
 .Player {
+	z-index: 3;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -14,6 +15,7 @@
 
 
 .Scoreboard {
+	z-index: 4;
 	position: absolute;
 	left: 50%;
 	top: 10em;
@@ -73,12 +75,16 @@ height: 57.6em;
 margin-left: -51.2em;
 margin-top: -28.8em;
 overflow: hidden;
-background: url('../images/cityLandscape.png') repeat-x;
+background: url('../images/lmao.jpg') repeat-x;
 background-size: auto 100%;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
 }
 
 .Ground {
-	z-index: 1;
+	z-index: 2;
 	position: absolute;
 	height: 5em;
 	right: -60em;
@@ -89,6 +95,22 @@ background-size: auto 100%;
 	-webkit-animation: ground;
 	-webkit-animation-timing-function: linear;
 	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: infinite;
+	transform: translateZ(0);
+
+}
+
+.CityLandscape {
+	z-index: 1;
+	position: absolute;
+	height: 53em;
+	right: -80em;
+	left: 0;
+	background: url('../images/cityLandscape.png') repeat right;
+	background-size: auto 100%;
+	-webkit-animation: ground;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-duration: 5s;
 	-webkit-animation-iteration-count: infinite;
 	transform: translateZ(0);
 }
