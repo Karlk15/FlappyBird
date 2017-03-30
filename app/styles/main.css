@@ -86,7 +86,7 @@ background-size: cover;
 .Ground {
 	z-index: 2;
 	position: absolute;
-	height: 5em;
+	height: 15em;
 	right: -60em;
 	left: 0;
 	bottom: 0;
@@ -104,13 +104,13 @@ background-size: cover;
 	z-index: 1;
 	position: absolute;
 	height: 53em;
-	right: -80em;
-	left: 0;
-	background: url('../images/cityLandscape.png') repeat right;
+	right: -600em;
+	left: -200em;
+	background: url('../images/cityLandscape.png') repeat-x;
 	background-size: auto 100%;
 	-webkit-animation: ground;
 	-webkit-animation-timing-function: linear;
-	-webkit-animation-duration: 5s;
+	-webkit-animation-duration: 30s;
 	-webkit-animation-iteration-count: infinite;
 	transform: translateZ(0);
 }
