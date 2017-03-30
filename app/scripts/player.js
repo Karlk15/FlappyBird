@@ -37,7 +37,7 @@ window.Player = (function() {
 			this.pos.y += delta * SPEEDDOWN;
 			this.rotation = 20; 
 		}
-	
+
 
 
 		this.checkCollisionWithBounds();
