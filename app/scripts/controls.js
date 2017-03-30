@@ -31,10 +31,9 @@ window.Controls = (function() {
         // Only jump if space wasn't pressed.
         if (e.keyCode === 32 && !this.keys.space) {
             this._didJump = true;
-            var audio = new Audio('../audio/UH.mp3');
-        		audio.play();
+            var audio = new Audio ('../audio/UH.mp3');
+            audio.play();
         }
-
         // Remember that this button is down.
         if (e.keyCode in KEYS) {
             var keyName = KEYS[e.keyCode];

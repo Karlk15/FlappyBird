@@ -1,7 +1,7 @@
 window.CityLandscape = (function() {
     'use strict';
 
-    var SPEED = 4;
+    var SPEED = 2;
 
     var CityLandscape = function(el, game) {
         this.el = el;
@@ -12,7 +12,7 @@ window.CityLandscape = (function() {
     CityLandscape.prototype.onFrame = function(delta) {
         this.pos.x -= delta * SPEED;
 
-        if(this.pos.x <= -300) {
+        if(this.pos.x <= -540) {
             this.pox.x = 0;
         }
 
