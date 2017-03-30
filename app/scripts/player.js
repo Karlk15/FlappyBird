@@ -11,6 +11,7 @@ window.Player = (function() {
 	var INITIAL_POSITION_X = 30;
 	var INITIAL_POSITION_Y = 10;
 
+
 	var Player = function(el, game) {
 		this.el = el;
 		this.game = game;
@@ -31,6 +32,7 @@ window.Player = (function() {
 		} else {
 			this.pos.y += delta * SPEED;
 		}
+	
 
 
 		this.checkCollisionWithBounds();

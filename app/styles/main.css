@@ -13,7 +13,6 @@
 	transform: translateZ(0);
 }
 
-
 .Scoreboard {
 	z-index: 4;
 	position: absolute;
@@ -130,7 +129,7 @@ background-size: cover;
 		transform: translateZ(0) translateX(0);
 	}
 	100% {
-		transform: translateZ(0) translateX(-184.8em);
+		transform: translateZ(0) translateX(-185em);
 	}
 }
 
