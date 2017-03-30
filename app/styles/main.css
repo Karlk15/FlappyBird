@@ -87,16 +87,12 @@ background-size: cover;
 	position: absolute;
 	height: 15em;
 	right: -64em;
+	width: 102.4em + 64em;
 	left: 0;
 	bottom: 0;
 	background: url('../images/ground.png') repeat-x;
 	background-size: auto 100%;
-	
-	
-	-webkit-animation: slide;
-	-webkit-animation-timing-function: linear;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: infinite;
+	animation: slide 2s linear infinite;
 	transform: translateZ(0);
 }
 
@@ -108,10 +104,7 @@ background-size: cover;
 	left: 0;
 	background: url('../images/cityLandscape.png') repeat-x;
 	background-size: auto 100%;
-	-webkit-animation: citylandscape;
-	-webkit-animation-timing-function: linear;
-	-webkit-animation-duration: 25s;
-	-webkit-animation-iteration-count: infinite;
+	animation: slideBG 25s linear infinite;
 	transform: translateZ(0);
 }
 
@@ -124,12 +117,12 @@ background-size: cover;
 	}
 }
 
-@-webkit-keyframes citylandscape {
+@keyframes slideBG {
 	0% {
 		transform: translateZ(0) translateX(0);
 	}
 	100% {
-		transform: translateZ(0) translateX(-185em);
+		transform: translateZ(0) translateX(-184.8em);
 	}
 }
 
