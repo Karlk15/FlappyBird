@@ -92,7 +92,7 @@ background-size: cover;
 	bottom: 0;
 	background: url('../images/ground.png');
 	background-size: auto 100%;
-	animation: slide 15000s linear infinite;
+	animation: slide 900s linear infinite;
 	transform: translateZ(0);
 }
 
@@ -110,7 +110,7 @@ background-size: cover;
 
 @keyframes slide {
 	0% {
-		background-position: 35000%;
+		background-position: 10000%;
 	}
 	100% {
 		background-position: 0;
@@ -125,7 +125,6 @@ background-size: cover;
 		transform: translateZ(0) translateX(-184.8em);
 	}
 }
-
 
 .Pipe {
 
