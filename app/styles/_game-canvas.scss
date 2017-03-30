@@ -17,6 +17,9 @@
     margin-left: (em(-1024px) / 2);
     margin-top: (em(-576px) / 2);
 
+    background-image: url('../images/ground.png');
+    background-image: url('../images/cityLandscape.png');
+
     // Don't draw outside this box.
     overflow: hidden;
 
