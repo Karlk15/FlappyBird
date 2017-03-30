@@ -75,7 +75,7 @@ height: 57.6em;
 margin-left: -51.2em;
 margin-top: -28.8em;
 overflow: hidden;
-background: url('../images/lmao.jpg') repeat-x;
+background: url('../images/lmao.jpg');
 background-size: auto 100%;
 -webkit-background-size: cover;
 -moz-background-size: cover;
@@ -84,7 +84,7 @@ background-size: cover;
 }
 
 .Ground {
-	z-index: 2;
+	z-index: 1;
 	position: absolute;
 	height: 15em;
 	right: -64em;
@@ -92,19 +92,20 @@ background-size: cover;
 	bottom: 0;
 	background: url('../images/ground.png') repeat-x;
 	background-size: auto 100%;
-	-webkit-animation: ground;
+	
+	
+	-webkit-animation: slide;
 	-webkit-animation-timing-function: linear;
 	-webkit-animation-duration: 2s;
 	-webkit-animation-iteration-count: infinite;
 	transform: translateZ(0);
-
 }
 
 .CityLandscape {
-	z-index: 1;
+	z-index: 0;
 	position: absolute;
 	height: 53em;
-	right: -108em;
+	right: -184.8em;
 	left: 0;
 	background: url('../images/cityLandscape.png') repeat-x;
 	background-size: auto 100%;
@@ -115,7 +116,7 @@ background-size: cover;
 	transform: translateZ(0);
 }
 
-@-webkit-keyframes ground {
+@keyframes slide {
 	0% {
 		transform: translateZ(0) translateX(0);
 	}
@@ -129,7 +130,7 @@ background-size: cover;
 		transform: translateZ(0) translateX(0);
 	}
 	100% {
-		transform: translateZ(0) translateX(-108em);
+		transform: translateZ(0) translateX(-184.8em);
 	}
 }
 

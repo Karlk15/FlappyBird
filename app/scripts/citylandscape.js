@@ -1,7 +1,7 @@
 window.CityLandscape = (function() {
     'use strict';
 
-    var SPEED = 4;
+    var SPEED = 2;
 
     var CityLandscape = function(el, game) {
         this.el = el;
