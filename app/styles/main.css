@@ -104,13 +104,13 @@ background-size: cover;
 	z-index: 1;
 	position: absolute;
 	height: 53em;
-	right: -600em;
-	left: -200em;
+	right: -184.8em;
+	left: 0;
 	background: url('../images/cityLandscape.png') repeat-x;
 	background-size: auto 100%;
-	-webkit-animation: ground;
+	-webkit-animation: citylandscape;
 	-webkit-animation-timing-function: linear;
-	-webkit-animation-duration: 30s;
+	-webkit-animation-duration: 25s;
 	-webkit-animation-iteration-count: infinite;
 	transform: translateZ(0);
 }
@@ -123,6 +123,16 @@ background-size: cover;
 		transform: translateZ(0) translateX(-60em);
 	}
 }
+
+@-webkit-keyframes citylandscape {
+	0% {
+		transform: translateZ(0) translateX(0);
+	}
+	100% {
+		transform: translateZ(0) translateX(-184.8em);
+	}
+}
+
 
 .Pipe {
 
