@@ -67,7 +67,6 @@ window.Game = (function() {
 		this.ResetAudio.pause();
 		this.GameSoundtrack.play();
 		this.player.reset();
-
 	};
 
 	/**
