@@ -32,7 +32,7 @@ window.Player = (function() {
 		} else {
 			this.pos.y += delta * SPEED;
 		}
-	
+
 
 
 		this.checkCollisionWithBounds();

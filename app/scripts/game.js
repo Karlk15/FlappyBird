@@ -11,8 +11,11 @@ window.Game = (function() {
 		this.el = el;
 		this.player = new window.Player(this.el.find('.Player'), this);
 		this.isPlaying = false;
+		this.GameSoundtrack = new Audio('../audio/backgroundmusic.mp3');
+		this.DeathSound = new Audio('../audio/IamaGod.mp3');
+		this.ResetAudio = new Audio('../audio/kanyeEGO.mp3');
 
-		var fontSize = Math.min(
+			var fontSize = Math.min(
 			window.innerWidth / Game.prototype.WORLD_WIDTH,
 			window.innerHeight / Game.prototype.WORLD_HEIGHT
 		);
@@ -49,18 +52,22 @@ window.Game = (function() {
 	 */
 	Game.prototype.start = function() {
 		this.reset();
-
 		// Restart the onFrame loop
 		this.lastFrame = +new Date() / 1000;
 		window.requestAnimationFrame(this.onFrame);
 		this.isPlaying = true;
 	};
 
+
 	/**
 	 * Resets the state of the game so a new game can be started.
 	 */
 	Game.prototype.reset = function() {
+		this.DeathSound.pause();
+		this.ResetAudio.pause();
+		this.GameSoundtrack.play();
 		this.player.reset();
+
 	};
 
 	/**
@@ -68,8 +75,9 @@ window.Game = (function() {
 	 */
 	Game.prototype.gameover = function() {
 		this.isPlaying = false;
-		var audio = new Audio('../audio/IamaGod.mp3');
-		audio.play();
+		this.GameSoundtrack.pause();
+		this.DeathSound.play();
+		this.ResetAudio.play();
 		// Should be refactored into a Scoreboard class.
 		var that = this;
 		var scoreboardEl = this.el.find('.Scoreboard');
