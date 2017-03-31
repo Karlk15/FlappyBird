@@ -84,14 +84,14 @@ background-size: cover;
 }
 
 .Ground {
-	z-index: 0;
+	z-index: 2;
 	position: absolute;
 	top: 43.5em;
 	height: 25em;
 	width: 324em;
 	background: url('../images/ground1.png') repeat-x;
-	background-size: 35em;
-	animation: slide 5.4s linear infinite;
+	background-size: 36em;
+	animation: slide 7.5s linear infinite;
 }
 
 @keyframes slide {
@@ -105,14 +105,14 @@ background-size: cover;
 }
 
 .CityLandscape {
-	z-index: 0;
+	z-index: 1;
 	position: absolute;
 	height: 31em;
 	width: 324em;
 	top: 22em;
 	background: url('../images/cityLandscape.png') repeat-x;
 	background-size: 108em;
-	animation: slideBG 10.8s linear infinite;
+	animation: slideBG 60s linear infinite;
 }
 
 @keyframes slideBG {
@@ -128,24 +128,21 @@ background-size: cover;
 .PipeBelow {
 	z-index: 3;
 	position: absolute;
-	height: 20em;
-	right: -184.8em;
-	left: 0;
-	bottom: 0;
-	background: url('../images/micPipeBelow.png');
+	bottom: -18.5em;
+	width: 12.5em;
+	height: 40em;
+	background: url('../images/micPipeBelow.png') repeat-x;
 	background-size: auto 100%;
-	animation: slideBG 25s linear infinite;
 	transform: translateZ(0);
 }
 
 .PipeAbove {
 	z-index: 3;
 	position: absolute;
-	height: 20em;
-	right: -184.8em;
-	left: 0;
-	background: url('../images/micPipeAbove.png');
+	top: -18.5em;
+	width: 12.5em;
+	height: 40em;
+	background: url('../images/micPipeAbove.png') repeat-x;
 	background-size: auto 100%;
-	animation: slideBG 25s linear infinite;
 	transform: translateZ(0);
 }

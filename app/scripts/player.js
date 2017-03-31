@@ -37,12 +37,11 @@ window.Player = (function() {
 		if (Controls.didJump()) {
 			this.rotation = -10;
 			this.velocity += this.lift;
-			setTimeout(this, 500);
 		} else {
 			this.velocity += this.gravity;
 			this .velocity *= 0.95;
 			this.pos.y += this.velocity;
-			this.rotation = 10; 
+			this.rotation = 10;
 		}
 
 		this.checkCollisionWithBounds();

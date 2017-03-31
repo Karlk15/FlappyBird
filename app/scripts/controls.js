@@ -19,9 +19,12 @@ window.Controls = (function() {
      * and touch devices.
      * @constructor
      */
+
+
     var Controls = function() {
         this._didJump = false;
         this.keys = {};
+        this.HelicopterSound = new Audio('../audio/HelicopterSound.mp3');
         $(window)
             .on('keydown', this._onKeyDown.bind(this))
             .on('keyup', this._onKeyUp.bind(this));
@@ -31,8 +34,7 @@ window.Controls = (function() {
         // Only jump if space wasn't pressed.
         if (e.keyCode === 32 && !this.keys.space) {
             this._didJump = true;
-            //var audio = new Audio ('../audio/UH.mp3');
-            //audio.play();
+            this.HelicopterSound.play();
         }
         // Remember that this button is down.
         if (e.keyCode in KEYS) {
