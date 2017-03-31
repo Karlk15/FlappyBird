@@ -12,3 +12,20 @@
 
     transform: translateZ(0);
 }
+
+
+.Cap {
+    // Absolutely position entities at 0,0 and use transform to
+    // move it around.
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: em(120px);
+    height: em(100px);
+
+    background-image: url('../images/hat.png');
+
+    transform: translateZ(0);
+}
+
+

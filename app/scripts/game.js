@@ -2,6 +2,7 @@
 window.Game = (function() {
 	'use strict';
 
+	var Controls = window.Controls;
 	/**
 	 * Main game class.
 	 * @param {Element} el jQuery element containing the game.
@@ -36,6 +37,12 @@ window.Game = (function() {
 		// Check if the game loop should stop.
 		if (!this.isPlaying) {
 			return;
+		}
+		if(Controls.isVolumeOn()){
+			this.SoundManager(0);
+		}
+		else{
+			this.SoundManager(1);
 		}
 
 		// Calculate how long since last frame in seconds.
@@ -96,6 +103,11 @@ window.Game = (function() {
 				});
 	};
 
+	Game.prototype.SoundManager = function(newVol) {
+		this.GameSoundtrack.volume = newVol;
+		this.DeathSound.volume = newVol;
+		this.ResetAudio.volume = newVol;
+	};
 
 	/**
 	 * Some shared constants.
