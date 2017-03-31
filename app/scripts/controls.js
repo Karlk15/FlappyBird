@@ -41,11 +41,11 @@ window.Controls = (function() {
         if(e.keyCode === 77){
            if(this.volumeOn){
              this.volumeOn = false;
-             this.HelicopterSound.volume = 0;
+             this.HelicopterSound.volume = 1;
            }
            else {
              this.volumeOn = true;
-             this.HelicopterSound.volume = 1;
+             this.HelicopterSound.volume = 0;
            }
         }
         // Remember that this button is down.

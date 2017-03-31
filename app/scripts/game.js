@@ -36,10 +36,10 @@ window.Game = (function() {
 			return;
 		}
 		if(Controls.isVolumeOn()){
-			this.SoundManager(1);
+			this.SoundManager(0);
 		}
 		else{
-			this.SoundManager(0);
+			this.SoundManager(1);
 		}
 
 		// Calculate how long since last frame in seconds.
