@@ -1,7 +1,7 @@
 window.Ground = (function() {
     'use strict';
 
-    var SPEED = 4;
+    var SPEED = 2;
 
     var Ground = function(el, game) {
         this.el = el;
@@ -12,7 +12,7 @@ window.Ground = (function() {
     Ground.prototype.onFrame = function(delta) {
         this.pos.x -= delta * SPEED;
 
-        if(this.pos.x <= -64) {
+        if(this.pos.x <= -108) {
             this.pox.x = 0;
         }
 

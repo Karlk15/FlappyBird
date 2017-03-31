@@ -85,36 +85,33 @@ background-size: cover;
 .Ground {
 	z-index: 0;
 	position: absolute;
-	height: 15em;
-	right: -64em;
-	width: 102.4em + 64em;
-	left: 0;
-	bottom: 0;
-	background: url('../images/ground.png');
-	background-size: auto 100%;
-	animation: slide 2s linear infinite;
+	top: 43.5em;
+	height: 25em;
+	width: 324em;
+	background: url('../images/ground1.png') repeat-x;
+	background-size: 35em;
+	animation: slide 5.4s linear infinite;
+}
+
+@keyframes slide {
+	0% { transform: translate3d(0, 0, 0); }
+	100% { transform: translate3d(-108em, 0, 0); }
+}
+
+@-webkit-keyframes slide {
+	0% { transform: translate3d(0, 0, 0); }
+	100% { transform: translate3d(-108em, 0, 0); }
 }
 
 .CityLandscape {
 	z-index: 0;
 	position: absolute;
-	height: 53em;
-	right: -184.8em;
-	left: 0;
+	height: 31em;
+	width: 324em;
+	top: 22em;
 	background: url('../images/cityLandscape.png') repeat-x;
-	background-size: auto 100%;
-	animation: slideBG 900s linear infinite;
-	transform: translateZ(0);
-}
-
-@keyframes slide {
-	0% {  transform: translate3d(0, 0, 0); }
-	100% { transform: translate3d(-60em, 0, 0); }
-}
-
-@-webkit-keyframes slide {
-	0% {  transform: translate3d(0, 0, 0); }
-	100% { transform: translate3d(-60em, 0, 0); }
+	background-size: 108em;
+	animation: slideBG 10.8s linear infinite;
 }
 
 @keyframes slideBG {

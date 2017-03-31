@@ -31,14 +31,12 @@ window.Player = (function() {
 
 	Player.prototype.onFrame = function(delta) {
 		if (Controls.didJump()) {
-			this.rotation = -20; 
+			this.rotation = (-20);
 			this.pos.y -= delta * SPEED;
 		} else {
 			this.pos.y += delta * SPEEDDOWN;
-			this.rotation = 20; 
+			this.rotation = 20;
 		}
-
-
 
 		this.checkCollisionWithBounds();
 
@@ -51,7 +49,7 @@ window.Player = (function() {
 			this.pos.x + WIDTH > this.game.WORLD_WIDTH ||
 			this.pos.y < 0 ||
 			this.pos.y + HEIGHT > this.game.WORLD_HEIGHT) {
-			this.rotation = 180; 
+			this.rotation = 180;
 			return this.game.gameover();
 		}
 	};
