@@ -37,13 +37,13 @@ window.Player = (function() {
 
 	Player.prototype.onFrame = function(delta) {
 		if (Controls.didJump()) {
-			this.rotation = -10; 
+			this.rotation = -10;
 			this.velocity += this.lift;
 		} else {
 			this.velocity += this.gravity;
 			this .velocity *= 0.95;
 			this.pos.y += this.velocity;
-			this.rotation = 10; 
+			this.rotation = 10;
 		}
 
 
