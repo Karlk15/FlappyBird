@@ -92,8 +92,7 @@ background-size: cover;
 	bottom: 0;
 	background: url('../images/ground.png');
 	background-size: auto 100%;
-	animation: slide 900s linear infinite;
-	transform: translateZ(0);
+	animation: slide 2s linear infinite;
 }
 
 .CityLandscape {
@@ -104,26 +103,28 @@ background-size: cover;
 	left: 0;
 	background: url('../images/cityLandscape.png') repeat-x;
 	background-size: auto 100%;
-	animation: slideBG 25s linear infinite;
+	animation: slideBG 900s linear infinite;
 	transform: translateZ(0);
 }
 
 @keyframes slide {
-	0% {
-		background-position: 10000%;
-	}
-	100% {
-		background-position: 0;
-	}
+	0% {  transform: translate3d(0, 0, 0); }
+	100% { transform: translate3d(-60em, 0, 0); }
+}
+
+@-webkit-keyframes slide {
+	0% {  transform: translate3d(0, 0, 0); }
+	100% { transform: translate3d(-60em, 0, 0); }
 }
 
 @keyframes slideBG {
-	0% {
-		transform: translateZ(0) translateX(0);
-	}
-	100% {
-		transform: translateZ(0) translateX(-184.8em);
-	}
+	0% {  transform: translate3d(0, 0, 0); }
+	100% { transform: translate3d(-108em, 0, 0); }
+}
+
+@-webkit-keyframes slideBG {
+	0% {  transform: translate3d(0, 0, 0); }
+	100% { transform: translate3d(-108em, 0, 0); }
 }
 
 .Pipe {
