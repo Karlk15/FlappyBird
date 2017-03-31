@@ -22,6 +22,8 @@ window.Player = (function() {
 		this.velocity = 0;
 	};
 
+	
+
 	/**
 	 * Resets the state of the player for a new game.
 	 */
@@ -58,7 +60,7 @@ window.Player = (function() {
 			this.pos.x + WIDTH > this.game.WORLD_WIDTH ||
 			this.pos.y < 0 ||
 			this.pos.y + HEIGHT > this.game.WORLD_HEIGHT) {
-			this.rotation = 180; 
+			this.rotation = 130; 
 			return this.game.gameover();
 		}
 	};
