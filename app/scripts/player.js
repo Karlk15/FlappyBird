@@ -17,10 +17,10 @@ window.Player = (function() {
 		this.el = el;
 		this.game = game;
 		this.pos = { x: 0, y: 0 };
-		this.rotation = -20   ;
+		this.rotation = -20;
 		this.gravity = 0.04;
 		this.velocity = 0;
-		this.lift = -1.4; 
+		this.lift = -1.13; 
 	};
 
 	
@@ -32,7 +32,7 @@ window.Player = (function() {
 		this.pos.x = INITIAL_POSITION_X;
 		this.pos.y = INITIAL_POSITION_Y;
 		this.rotation = 0;
-		this.lift = -1.4;
+		this.lift = -1.13;
 		this.velocity = 0;
 	};
 

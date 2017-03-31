@@ -16,12 +16,12 @@
 .Cap {
 	z-index: 3;
 	position: absolute;
-	top: -35px;
-	left: 8px;
+	top: -2em;
+	left: 0.35em;
 	width: 120px;
 	height: 100px;
 	background-image: url('../images/hat.png');
-	animation: play .07s steps(7) infinite;
+	animation: play .05s steps(7) infinite;
 
 }
 
