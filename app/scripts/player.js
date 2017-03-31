@@ -17,9 +17,10 @@ window.Player = (function() {
 		this.el = el;
 		this.game = game;
 		this.pos = { x: 0, y: 0 };
-		this.rotation = 0;
+		this.rotation = -20   ;
 		this.gravity = 0.04;
 		this.velocity = 0;
+		this.lift = -1.4; 
 	};
 
 	
@@ -31,13 +32,13 @@ window.Player = (function() {
 		this.pos.x = INITIAL_POSITION_X;
 		this.pos.y = INITIAL_POSITION_Y;
 		this.rotation = 0;
-		this.lift = -0.8;
+		this.lift = -1.4;
 		this.velocity = 0;
 	};
 
 	Player.prototype.onFrame = function(delta) {
 		if (Controls.didJump()) {
-			this.rotation = -10;
+			this.rotation = -20;
 			this.velocity += this.lift;
 		} else {
 			this.velocity += this.gravity;
