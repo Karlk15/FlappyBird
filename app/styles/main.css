@@ -138,9 +138,6 @@ background-size: cover;
 	transform: translateZ(0);
 }
 
-<<<<<<< HEAD
-}
-=======
 .PipeAbove {
 	z-index: 3;
 	position: absolute;
@@ -152,4 +149,3 @@ background-size: cover;
 	animation: slideBG 25s linear infinite;
 	transform: translateZ(0);
 }
->>>>>>> 2bfc5e01e434072dbd8a86e9db1732551161bb08

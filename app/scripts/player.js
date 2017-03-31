@@ -35,21 +35,14 @@ window.Player = (function() {
 
 	Player.prototype.onFrame = function(delta) {
 		if (Controls.didJump()) {
-<<<<<<< HEAD
-			this.rotation = (-20);
-			this.pos.y -= delta * SPEED;
-		} else {
-			this.pos.y += delta * SPEEDDOWN;
-			this.rotation = 20;
-=======
-			this.rotation = -10; 
+			this.rotation = -10;
 			this.velocity += this.lift;
+			setTimeout(this, 500);
 		} else {
 			this.velocity += this.gravity;
 			this .velocity *= 0.95;
 			this.pos.y += this.velocity;
 			this.rotation = 10; 
->>>>>>> 2bfc5e01e434072dbd8a86e9db1732551161bb08
 		}
 
 		this.checkCollisionWithBounds();
