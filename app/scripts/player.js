@@ -5,8 +5,8 @@ window.Player = (function() {
 
 	// All these constants are in em's, multiply by 10 pixels
 	// for 1024x576px canvas.
-	var SPEED = 30  ; // * 10 pixels per second
-	var SPEEDDOWN = 10;
+	//var SPEED = 30  ; // * 10 pixels per second
+	//var SPEEDDOWN = 10;
 	var WIDTH = 5;
 	var HEIGHT = 10;
 	var INITIAL_POSITION_X = 30;
@@ -18,6 +18,8 @@ window.Player = (function() {
 		this.game = game;
 		this.pos = { x: 0, y: 0 };
 		this.rotation = 0;
+		this.gravity = 0.04;
+		this.velocity = 0;
 	};
 
 	/**
@@ -26,16 +28,20 @@ window.Player = (function() {
 	Player.prototype.reset = function() {
 		this.pos.x = INITIAL_POSITION_X;
 		this.pos.y = INITIAL_POSITION_Y;
-		this.rotation = +20;
+		this.rotation = 0;
+		this.lift = -0.8;
+		this.velocity = 0;
 	};
 
 	Player.prototype.onFrame = function(delta) {
 		if (Controls.didJump()) {
-			this.rotation = -20; 
-			this.pos.y -= delta * SPEED;
+			this.rotation = -10; 
+			this.velocity += this.lift;
 		} else {
-			this.pos.y += delta * SPEEDDOWN;
-			this.rotation = 20; 
+			this.velocity += this.gravity;
+			this .velocity *= 0.95;
+			this.pos.y += this.velocity;
+			this.rotation = 10; 
 		}
 
 
