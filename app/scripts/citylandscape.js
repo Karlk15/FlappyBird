@@ -12,7 +12,7 @@ window.CityLandscape = (function() {
     CityLandscape.prototype.onFrame = function(delta) {
         this.pos.x -= delta * SPEED;
 
-        if(this.pos.x <= -540) {
+        if(this.pos.x <= -108) {
             this.pox.x = 0;
         }
 

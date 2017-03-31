@@ -47,8 +47,6 @@ window.Player = (function() {
 			this.rotation = 10;
 		}
 
-
-
 		this.checkCollisionWithBounds();
 
 		// Update UI

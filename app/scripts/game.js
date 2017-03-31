@@ -11,14 +11,17 @@ window.Game = (function() {
 	var Game = function(el) {
 		this.el = el;
 		this.player = new window.Player(this.el.find('.Player'), this);
+		this.pipeBelow = new window.PipeBelow(this.el.find('.PipeBelow'), this);
+		this.pipeAbove = new window.PipeAbove(this.el.find('.PipeAbove'), this);
 		this.isPlaying = false;
 		this.GameSoundtrack = new Audio('../audio/backgroundmusic.mp3');
 		this.DeathSound = new Audio('../audio/IamaGod.mp3');
 		this.ResetAudio = new Audio('../audio/kanyeEGO.mp3');
+		this.score = 0;
 
-			var fontSize = Math.min(
-			window.innerWidth / Game.prototype.WORLD_WIDTH,
-			window.innerHeight / Game.prototype.WORLD_HEIGHT
+		var fontSize = Math.min(
+		window.innerWidth / Game.prototype.WORLD_WIDTH,
+		window.innerHeight / Game.prototype.WORLD_HEIGHT
 		);
 		el.css('fontSize', fontSize + 'px');
 
@@ -49,6 +52,8 @@ window.Game = (function() {
 
 		// Update game entities.
 		this.player.onFrame(delta);
+		this.pipeBelow.onFrame(delta);
+		this.pipeAbove.onFrame(delta);
 
 		// Request next frame.
 		window.requestAnimationFrame(this.onFrame);
@@ -74,6 +79,8 @@ window.Game = (function() {
 		this.ResetAudio.pause();
 		this.GameSoundtrack.play();
 		this.player.reset();
+		this.pipeBelow.reset();
+		this.pipeAbove.reset();
 	};
 
 	/**
