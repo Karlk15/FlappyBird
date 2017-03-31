@@ -17,21 +17,23 @@
 	z-index: 3;
 	position: absolute;
 	top: -2em;
-	left: 0.35em;
-	width: 120px;
-	height: 100px;
+	left: 0.5em;
+	width: 100%;
+	height: 78%;
+	object-fit: contain;
+	background-size: 700%;
 	background-image: url('../images/hat.png');
 	animation: play .05s steps(7) infinite;
 
 }
 
 @-webkit-keyframes play {
-	from { background-position: 0px; }
-	to { background-position:  -840px; }
+	from { background-position: 0; }
+	to { background-position:  700%; }
 }
 @keyframes play {
-	from { background-position: 0px; }
-	to { background-position:  -840px;}
+	from { background-position: 0; }
+	to { background-position:  700%;}
 }
 
 
