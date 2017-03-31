@@ -10,7 +10,8 @@ window.Controls = (function() {
         37: 'left',
         38: 'up',
         39: 'right',
-        40: 'down'
+        40: 'down',
+        77: 'm'
     };
 
     /**
@@ -24,6 +25,7 @@ window.Controls = (function() {
     var Controls = function() {
         this._didJump = false;
         this.keys = {};
+        this.volumeOn = false;
         this.HelicopterSound = new Audio('../audio/HelicopterSound.mp3');
         $(window)
             .on('keydown', this._onKeyDown.bind(this))
@@ -35,6 +37,16 @@ window.Controls = (function() {
         if (e.keyCode === 32 && !this.keys.space) {
             this._didJump = true;
             this.HelicopterSound.play();
+        }
+        if(e.keyCode === 77){
+           if(this.volumeOn){
+             this.volumeOn = false;
+             this.HelicopterSound.volume = 0;
+           }
+           else {
+             this.volumeOn = true;
+             this.HelicopterSound.volume = 1;
+           }
         }
         // Remember that this button is down.
         if (e.keyCode in KEYS) {
@@ -52,6 +64,9 @@ window.Controls = (function() {
         }
     };
 
+    Controls.prototype.isVolumeOn = function() {
+      return this.volumeOn;
+    }
     /**
      * Only answers true once until a key is pressed again.
      */
