@@ -13,6 +13,7 @@
 	transform: translateZ(0);
 }
 
+
 .Scoreboard {
 	z-index: 4;
 	position: absolute;
@@ -124,6 +125,31 @@ background-size: cover;
 	100% { transform: translate3d(-108em, 0, 0); }
 }
 
-.Pipe {
-
+.PipeBelow {
+	z-index: 3;
+	position: absolute;
+	height: 20em;
+	right: -184.8em;
+	left: 0;
+	bottom: 0;
+	background: url('../images/micPipeBelow.png');
+	background-size: auto 100%;
+	animation: slideBG 25s linear infinite;
+	transform: translateZ(0);
 }
+
+<<<<<<< HEAD
+}
+=======
+.PipeAbove {
+	z-index: 3;
+	position: absolute;
+	height: 20em;
+	right: -184.8em;
+	left: 0;
+	background: url('../images/micPipeAbove.png');
+	background-size: auto 100%;
+	animation: slideBG 25s linear infinite;
+	transform: translateZ(0);
+}
+>>>>>>> 2bfc5e01e434072dbd8a86e9db1732551161bb08
