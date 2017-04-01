@@ -19,6 +19,7 @@ window.Game = (function() {
 		this.GameSoundtrack = new Audio('../audio/backgroundmusic.mp3');
 		this.DeathSound = new Audio('../audio/IamaGod.mp3');
 		this.ResetAudio = new Audio('../audio/kanyeEGO.mp3');
+		this.CameraSound = new Audio('../audio/CameraSound.mp3');
 		this.score = 0;
 
 		var fontSize = Math.min(
@@ -79,6 +80,7 @@ window.Game = (function() {
 	Game.prototype.reset = function() {
 		this.DeathSound.pause();
 		this.ResetAudio.pause();
+		this.CameraSound.pause();
 		this.GameSoundtrack.play();
 		this.player.reset();
 		this.pipeBelow.reset();
@@ -93,6 +95,7 @@ window.Game = (function() {
 		this.GameSoundtrack.pause();
 		this.DeathSound.play();
 		this.ResetAudio.play();
+		this.CameraSound.play();
 		// Should be refactored into a Scoreboard class.
 		var that = this;
 		var scoreboardEl = this.el.find('.Scoreboard');
@@ -109,6 +112,7 @@ window.Game = (function() {
 		this.GameSoundtrack.volume = newVol;
 		this.DeathSound.volume = newVol;
 		this.ResetAudio.volume = newVol;
+		this.CameraSound.volume = newVol;
 	};
 
 	/**
