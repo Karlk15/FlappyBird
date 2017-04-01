@@ -9,6 +9,8 @@ window.PipeAbove = (function() {
     this.el = el;
     this.game = game;
     this.offset = offsetX;
+		this.WIDTH = 11.5;
+		this.HEIGHT = 37;
     this.pos = {x: INITIAL_POSITION_X, y: INITIAL_POSITION_Y};
 	};
 

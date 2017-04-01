@@ -53,8 +53,29 @@ window.Player = (function() {
 		this.el.css('transform', 'translateZ(0) translate(' + this.pos.x + 'em, ' + this.pos.y + 'em) rotate('+ this.rotation+ 'deg)' );
 	};
 
-
 	Player.prototype.checkCollisionWithBounds = function() {
+
+		var pipeAbove = this.game.pipeAbove;
+		var pipeBelow = this.game.pipeBelow;
+		
+		/*
+		if(((this.pos.y + this.HEIGHT) < (pipeAbove.pos.y)) ||
+		(this.pos.y > (pipeAbove.pos.y + pipeAbove.HEIGHT)) ||
+		((this.pos.x + this.WIDTH) < pipeAbove.pos.x) ||
+		(this.pos.x > (pipeAbove.pos.x + pipeAbove.WIDTH))) {
+			this.rotation = 130;
+			return this.game.gameover();
+		}
+
+		if(((this.pos.y + this.HEIGHT) < (pipeBelow.pos.y)) ||
+		(this.pos.y > (pipeBelow.pos.y + pipeBelow.HEIGHT)) ||
+		((this.pos.x + this.WIDTH) < pipeBelow.pos.x) ||
+		(this.pos.x > (pipeBelow.pos.x + pipeBelow.WIDTH))) {
+			this.rotation = 130;
+			return this.game.gameover();
+		}
+		*/
+		
 		if (this.pos.x < 0 ||
 			this.pos.x + WIDTH > this.game.WORLD_WIDTH ||
 			this.pos.y < 0 ||
@@ -62,6 +83,7 @@ window.Player = (function() {
 			this.rotation = 130;
 			return this.game.gameover();
 		}
+		
 	};
 
 	return Player;
