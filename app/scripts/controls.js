@@ -37,7 +37,6 @@ window.Controls = (function() {
         if (e.keyCode === 32 && !this.keys.space) {
             this._didJump = true;
             this.HelicopterSound.play();
-            this._onKeyDown.add('../images/kanyehappy.png');
         }
         if(e.keyCode === 77){
            if(this.volumeOn){

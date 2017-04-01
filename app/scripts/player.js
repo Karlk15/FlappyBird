@@ -55,37 +55,22 @@ window.Player = (function() {
 
 	Player.prototype.checkCollisionWithBounds = function() {
 
-		var pipeAbove = this.game.pipeAbove;
-		var pipeBelow = this.game.pipeBelow;
-		
-		/*
-		if(((this.pos.y + this.HEIGHT) < (pipeAbove.pos.y)) ||
-		(this.pos.y > (pipeAbove.pos.y + pipeAbove.HEIGHT)) ||
-		((this.pos.x + this.WIDTH) < pipeAbove.pos.x) ||
-		(this.pos.x > (pipeAbove.pos.x + pipeAbove.WIDTH))) {
-			this.rotation = 130;
-			return this.game.gameover();
-		}
-
-		if(((this.pos.y + this.HEIGHT) < (pipeBelow.pos.y)) ||
-		(this.pos.y > (pipeBelow.pos.y + pipeBelow.HEIGHT)) ||
-		((this.pos.x + this.WIDTH) < pipeBelow.pos.x) ||
-		(this.pos.x > (pipeBelow.pos.x + pipeBelow.WIDTH))) {
-			this.rotation = 130;
-			return this.game.gameover();
-		}
-		*/
-
 		if (this.pos.x < 0 ||
 			this.pos.x + WIDTH > this.game.WORLD_WIDTH ||
 			this.pos.y < 0 ||
-			this.pos.y + HEIGHT > this.game.WORLD_HEIGHT) {
-			this.rotation = 130;
+			this.pos.y + HEIGHT > this.game.WORLD_HEIGHT ||
+			this.checkCollisionWithPipes()) {
+				this.rotation = 130;
 			return this.game.gameover();
 		}
-		
 	};
 
+	Player.prototype.checkCollisionWithPipes = function() {
+	return (this.pos.x > this.game.pipeBelow.pos.x && this.pos.x < this.game.pipeBelow.pos.x + 3
+					&& ((this.pos.y < this.game.pipeBelow.pos.y + 15) || (this.pos.y > this.game.pipeBelow.pos.y + 33))) ||
+					(this.pos.x > this.game.pipeAbove.pos.x && this.pos.x < this.game.pipeAbove.pos.x + 3
+					&& ((this.pos.y < this.game.pipeAbove.pos.y + 15) || (this.pos.y > this.game.pipeAbove.pos.y + 36)));
+};
 	return Player;
 
 })();
