@@ -124,8 +124,8 @@ body {
 	z-index: 3;
 	position: absolute;
 	bottom: -18.5em;
-	width: 12.5em;
-	height: 40em;
+	width: 11.5em;
+	height: 37em;
 	background: url('../images/micPipeBelow.png') repeat-x;
 	background-size: auto 100%;
 	transform: translateZ(0);
@@ -135,8 +135,8 @@ body {
 	z-index: 3;
 	position: absolute;
 	top: -18.5em;
-	width: 12.5em;
-	height: 40em;
+	width: 11.5em;
+	height: 37em;
 	background: url('../images/micPipeAbove.png') repeat-x;
 	background-size: auto 100%;
 	transform: translateZ(0);
@@ -147,7 +147,7 @@ body {
 	position: relative;
 	z-index: 100;
 	color: black;
-	font-size: 36px;
+	font-size: 3.6em;
 	font-weight: bold;
 	float: right;
 	margin: 1em;
