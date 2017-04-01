@@ -20,10 +20,10 @@ window.Player = (function() {
 		this.rotation = -20;
 		this.gravity = 0.04;
 		this.velocity = 0;
-		this.lift = -1.13; 
+		this.lift = -1.13;
 	};
 
-	
+
 
 	/**
 	 * Resets the state of the player for a new game.
@@ -42,7 +42,7 @@ window.Player = (function() {
 			this.velocity += this.lift;
 		} else {
 			this.velocity += this.gravity;
-			this .velocity *= 0.95;
+			this.velocity *= 0.95;
 			this.pos.y += this.velocity;
 			this.rotation = 10;
 		}
@@ -59,7 +59,7 @@ window.Player = (function() {
 			this.pos.x + WIDTH > this.game.WORLD_WIDTH ||
 			this.pos.y < 0 ||
 			this.pos.y + HEIGHT > this.game.WORLD_HEIGHT) {
-			this.rotation = 130; 
+			this.rotation = 130;
 			return this.game.gameover();
 		}
 	};

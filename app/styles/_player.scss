@@ -28,4 +28,14 @@
     transform: translateZ(0);
 }
 
+.PlayerNewFace {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: em(50px);
+  height: em(50px);
 
+  background-image: url('../images/kanyehappy.png');
+
+  transform: translateZ(0);
+}

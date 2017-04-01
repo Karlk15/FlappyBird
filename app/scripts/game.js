@@ -8,11 +8,13 @@ window.Game = (function() {
 	 * @param {Element} el jQuery element containing the game.
 	 * @constructor
 	 */
+	 var offset = 26;
+
 	var Game = function(el) {
 		this.el = el;
 		this.player = new window.Player(this.el.find('.Player'), this);
-		this.pipeBelow = new window.PipeBelow(this.el.find('.PipeBelow'), this);
-		this.pipeAbove = new window.PipeAbove(this.el.find('.PipeAbove'), this);
+		this.pipeBelow = new window.PipeBelow(this.el.find('.PipeBelow'), this, offset*0);
+		this.pipeAbove = new window.PipeAbove(this.el.find('.PipeAbove'), this, offset*1);
 		this.isPlaying = false;
 		this.GameSoundtrack = new Audio('../audio/backgroundmusic.mp3');
 		this.DeathSound = new Audio('../audio/IamaGod.mp3');
