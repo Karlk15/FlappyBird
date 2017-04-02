@@ -82,7 +82,7 @@ window.Player = (function() {
 			(this.pos.x > this.game.pipeAbove.pos.x &&
 			this.pos.x < this.game.pipeAbove.pos.x + 3 &&
 			((this.pos.y < this.game.pipeAbove.pos.y + 15) ||
-			(this.pos.y > this.game.pipeAbove.pos.y + 35)));
+			(this.pos.y > this.game.pipeAbove.pos.y + 40)));
 	};
 
 
