@@ -141,6 +141,9 @@ window.Game = (function() {
 		this.DeathSound.volume = newVol;
 		this.ResetAudio.volume = newVol;
 		this.CameraSound.volume = newVol;
+		this.president.volume = newVol;
+		this.Rockstar.volume = newVol;
+		this.kanyeWalmart.volume = newVol;
 	};
 
 	/**
