@@ -87,7 +87,7 @@ window.Player = (function() {
 
 	Player.prototype.NotCollisionWithPipes = function() {
 		return (this.pos.x > this.game.pipeBelow.pos.x &&
-		this.pos.x < this.game.pipeBelow.pos.x + 1) ||
+		this.pos.x < this.game.pipeBelow.pos.x + 0.845) ||
 		(this.pos.x > this.game.pipeAbove.pos.x &&
 		this.pos.x < this.game.pipeAbove.pos.x);
 	};

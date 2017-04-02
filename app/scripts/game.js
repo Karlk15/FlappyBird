@@ -78,7 +78,7 @@ window.Game = (function() {
 		this.player.onFrame(delta);
 		this.pipeBelow.onFrame(delta);
 		this.pipeAbove.onFrame(delta);
-
+		document.querySelector('#score').innerHTML = 'Score: ' + this.score;
 		// Request next frame.
 		window.requestAnimationFrame(this.onFrame);
 	};
@@ -134,6 +134,7 @@ window.Game = (function() {
 			.find('.Scoreboard-restart')
 				.one('click', function() {
 					scoreboardEl.removeClass('is-visible');
+					this.score = 0;
 					that.start();
 				});
 	};

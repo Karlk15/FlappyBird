@@ -11,9 +11,8 @@
 	background-image: url('../images/papaflash.gif');
 	text-align: center;
 	// Keep it off-screen
-	transform: translate(0, em(-400px));
+	transform: translate3d(0, em(-400px), 0);
 	transition: transform 0.5s;
-	transform: translateZ(0);
 }
 
 /**

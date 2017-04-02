@@ -39,7 +39,7 @@
 	border-radius: 1.2em;
 	background-image: url('../images/papaflash.gif');
 	text-align: center;
-	-webkit-transform: translate(0, -40em);
+	-webkit-transform: translate3d(0, -40em, 0);
 	-webkit-transition: -webkit-transform 0.5s;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -176,20 +176,20 @@ body {
 }
 
 @-webkit-keyframes play {
-	from { background-position: 0; }
-	to { background-position:  700%; }
+	from { transform: translateZ(0); background-position: 0; }
+	to { transform: translateZ(0); background-position:  700%; }
 }
 @-moz-keyframes play {
-	from { background-position: 0; }
-	to { background-position:  700%; }
+	from { transform: translateZ(0); background-position: 0; }
+	to { transform: translateZ(0); background-position:  700%; }
 }
 @-o-keyframes play {
-	from { background-position: 0; }
-	to { background-position:  700%; }
+	from { transform: translateZ(0); background-position: 0; }
+	to { transform: translateZ(0); background-position:  700%; }
 }
 @keyframes play {
-	from { background-position: 0; }
-	to { background-position:  700%;}
+	from { transform: translateZ(0); background-position: 0; }
+	to { transform: translateZ(0); background-position:  700%; }
 }
 
 @-webkit-keyframes slide {
