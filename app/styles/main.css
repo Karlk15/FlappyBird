@@ -54,6 +54,7 @@
 }
 
 .Scoreboard-restart {
+	float:center;
 	margin-top: 8em;
 	font-size: inherit;
 	padding: 0.4em 1.5em;

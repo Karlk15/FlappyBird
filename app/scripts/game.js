@@ -20,9 +20,12 @@ window.Game = (function() {
 		this.DeathSound = new Audio('../audio/IamaGod.mp3');
 		this.ResetAudio = new Audio('../audio/kanyeEGO.mp3');
 		this.CameraSound = new Audio('../audio/CameraSound.mp3');
+		this.Rockstar = new Audio('../audio/kanyeRockstar.mp3');
+		this.kanyeWalmart = new Audio('../audio/BiggerThanWalmart.mp3');
+		this.president = new Audio('../audio/kanyePresident.mp3');
 		this.score = 0;
 		this.highScore = 0;
-
+		this.isPlaying = false;
 		var fontSize = Math.min(
 		window.innerWidth / Game.prototype.WORLD_WIDTH,
 		window.innerHeight / Game.prototype.WORLD_HEIGHT
@@ -54,6 +57,22 @@ window.Game = (function() {
 		var now = +new Date() / 1000,
 				delta = now - this.lastFrame;
 		this.lastFrame = now;
+		if(this.score === 10){
+			this.Rockstar.play();
+			this.isPlaying = true;
+		}
+		else if(this.score === 15){
+			this.kanyeWalmart.play();
+			this.isPlaying = true;
+		}
+		else if(this.score === 20){
+			this.president.play();
+			this.isPlaying = true;
+		}
+		else if (this.score === 22){
+			this.president.pause();
+		}
+
 
 		// Update game entities.
 		this.player.onFrame(delta);
