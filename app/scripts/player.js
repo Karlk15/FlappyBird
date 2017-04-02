@@ -54,11 +54,6 @@ window.Player = (function() {
 		}
 
 		this.checkCollisionWithBounds();
-		this.checkScore();
-		console.log(this.game.score);
-		if(this.game.pipeBelow.pos.x > 29.50 && this.game.pipeBelow.pos.x < 30.50) {
-			console.log(this.game.pipeBelow.pos.x);
-		}
 
 		// Update UI
 		this.el.css('transform', 'translateZ(0) translate(' + this.pos.x + 'em, ' + this.pos.y + 'em) rotate('+ this.rotation+ 'deg)' );
@@ -73,6 +68,9 @@ window.Player = (function() {
 			this.checkCollisionWithPipes()) {
 			this.rotation = 130;
 			return this.game.gameover();
+		} else if(this.NotCollisionWithPipes()){
+			this.game.score++;
+			document.querySelector('#score').innerHTML = 'Score: ' + this.game.score;
 		}
 	};
 
@@ -80,23 +78,19 @@ window.Player = (function() {
 		return (this.pos.x > this.game.pipeBelow.pos.x &&
 			this.pos.x < this.game.pipeBelow.pos.x + 3 &&
 			((this.pos.y < this.game.pipeBelow.pos.y + 15) ||
-			(this.pos.y > this.game.pipeBelow.pos.y + 33))) ||
+			(this.pos.y > this.game.pipeBelow.pos.y + 35))) ||
 			(this.pos.x > this.game.pipeAbove.pos.x &&
-			this.pos.x < this.game.pipeAbove.pos.x + 9 &&
+			this.pos.x < this.game.pipeAbove.pos.x + 3 &&
 			((this.pos.y < this.game.pipeAbove.pos.y + 15) ||
-			(this.pos.y > this.game.pipeAbove.pos.y + 36)));
+			(this.pos.y > this.game.pipeAbove.pos.y + 40)));
 	};
 
-	Player.prototype.checkScore = function() {
-		if(this.game.pipeBelow.pos.x > this.pos.x &&
-			this.game.pipeAbove.pos.x < this.pos.x &&
-			this.game.pipeBelow.pos.x === 30 &&
-			this.game.isPlaying) {
-			this.game.score = this.game.score + 1;
-			return this.game.score;
-		}
+	Player.prototype.NotCollisionWithPipes = function() {
+		return (this.pos.x > this.game.pipeBelow.pos.x &&
+		this.pos.x < this.game.pipeBelow.pos.x + 1) ||
+		(this.pos.x > this.game.pipeAbove.pos.x &&
+		this.pos.x < this.game.pipeAbove.pos.x);
 	};
-
 	return Player;
 
 })();

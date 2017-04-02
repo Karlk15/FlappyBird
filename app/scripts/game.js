@@ -21,6 +21,7 @@ window.Game = (function() {
 		this.ResetAudio = new Audio('../audio/kanyeEGO.mp3');
 		this.CameraSound = new Audio('../audio/CameraSound.mp3');
 		this.score = 0;
+		this.highScore = 0;
 
 		var fontSize = Math.min(
 		window.innerWidth / Game.prototype.WORLD_WIDTH,
@@ -30,6 +31,7 @@ window.Game = (function() {
 
 		// Cache a bound onFrame since we need it each frame.
 		this.onFrame = this.onFrame.bind(this);
+		document.querySelector('#score').innerHTML = 'Score: ' + this.score;
 	};
 
 	/**
@@ -87,6 +89,8 @@ window.Game = (function() {
 		this.pipeBelow.reset();
 		this.pipeAbove.reset();
 		this.score = 0;
+
+		document.querySelector('#score').innerHTML = 'Score: ' + this.score;
 	};
 
 	/**
@@ -98,6 +102,11 @@ window.Game = (function() {
 		this.DeathSound.play();
 		this.ResetAudio.play();
 		this.CameraSound.play();
+		if(this.highScore < this.score) {
+			this.highScore = this.score;
+		}
+		document.querySelector('.score').innerHTML = 'Score: ' + this.score;
+		document.querySelector('.highscore').innerHTML = 'High Score: ' + this.highScore;
 		// Should be refactored into a Scoreboard class.
 		var that = this;
 		var scoreboardEl = this.el.find('.Scoreboard');

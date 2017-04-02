@@ -55,7 +55,7 @@
 }
 
 .Scoreboard-restart {
-	margin-top: 20em;
+	margin-top: 8em;
 	font-size: inherit;
 	padding: 0.4em 1.5em;
 	border: 0.2em solid white;
@@ -154,6 +154,23 @@ body {
 	font-weight: bold;
 	float: right;
 	margin: 1em;
+}
+
+.highscore {
+	color: red;
+	font-weight: bold;
+	font-size: 3em;
+}
+
+.score {
+	color: red;
+	font-weight: bolder;
+	font-size: 2em;
+}
+
+.text {
+	color: white;
+	font-weight: bold;
 }
 
 @-webkit-keyframes play {
