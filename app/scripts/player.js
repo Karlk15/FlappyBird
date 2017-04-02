@@ -43,7 +43,7 @@ window.Player = (function() {
 			this.velocity += this.gravity;
 			this.velocity *= 0.95;
 		}
-		
+
 		this.pos.y += this.velocity;
 
 		if(this.velocity < 0) {
@@ -68,6 +68,9 @@ window.Player = (function() {
 			this.checkCollisionWithPipes()) {
 			this.rotation = 130;
 			return this.game.gameover();
+		} else if(this.NotCollisionWithPipes()){
+			this.game.score++;
+			document.querySelector('#score').innerHTML = 'Score: ' + this.game.score;
 		}
 	};
 
@@ -75,12 +78,20 @@ window.Player = (function() {
 		return (this.pos.x > this.game.pipeBelow.pos.x &&
 			this.pos.x < this.game.pipeBelow.pos.x + 3 &&
 			((this.pos.y < this.game.pipeBelow.pos.y + 15) ||
-			(this.pos.y > this.game.pipeBelow.pos.y + 33))) ||
+			(this.pos.y > this.game.pipeBelow.pos.y + 40))) ||
 			(this.pos.x > this.game.pipeAbove.pos.x &&
-			this.pos.x < this.game.pipeAbove.pos.x + 9 &&
+			this.pos.x < this.game.pipeAbove.pos.x + 3 &&
 			((this.pos.y < this.game.pipeAbove.pos.y + 15) ||
-			(this.pos.y > this.game.pipeAbove.pos.y + 36)));
+			(this.pos.y > this.game.pipeAbove.pos.y + 40)));
 	};
+
+
+	Player.prototype.NotCollisionWithPipes = function() {
+	return (this.pos.x > this.game.pipeBelow.pos.x &&
+		 this.pos.x < this.game.pipeBelow.pos.x + 1) ||
+		 (this.pos.x > this.game.pipeAbove.pos.x &&
+		 this.pos.x < this.game.pipeAbove.pos.x + 1);
+}
 	return Player;
 
 })();
