@@ -38,15 +38,15 @@ window.Controls = (function() {
             this._didJump = true;
             this.HelicopterSound.play();
         }
-        if(e.keyCode === 77){
-           if(this.volumeOn){
-             this.volumeOn = false;
-             this.HelicopterSound.volume = 1;
-           }
-           else {
-             this.volumeOn = true;
-             this.HelicopterSound.volume = 0;
-           }
+        if (e.keyCode === 77) {
+            if(this.volumeOn) {
+                this.volumeOn = false;
+                this.HelicopterSound.volume = 1;
+            }
+            else {
+                this.volumeOn = true;
+                this.HelicopterSound.volume = 0;
+            }
         }
         // Remember that this button is down.
         if (e.keyCode in KEYS) {
@@ -65,8 +65,8 @@ window.Controls = (function() {
     };
 
     Controls.prototype.isVolumeOn = function() {
-      return this.volumeOn;
-    }
+        return this.volumeOn;
+    };
     /**
      * Only answers true once until a key is pressed again.
      */

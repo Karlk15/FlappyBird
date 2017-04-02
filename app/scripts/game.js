@@ -8,7 +8,7 @@ window.Game = (function() {
 	 * @param {Element} el jQuery element containing the game.
 	 * @constructor
 	 */
-	 var offset = 18;
+	var offset = 18;
 
 	var Game = function(el) {
 		this.el = el;

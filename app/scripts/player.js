@@ -36,14 +36,20 @@ window.Player = (function() {
 		this.velocity = 0;
 	};
 
-	Player.prototype.onFrame = function(delta) {
+	Player.prototype.onFrame = function() {
 		if (Controls.didJump()) {
-			this.rotation = -20;
 			this.velocity += this.lift;
 		} else {
 			this.velocity += this.gravity;
 			this.velocity *= 0.95;
-			this.pos.y += this.velocity;
+		}
+		
+		this.pos.y += this.velocity;
+
+		if(this.velocity < 0) {
+			this.rotation = -20;
+		}
+		else {
 			this.rotation = 10;
 		}
 
@@ -60,17 +66,21 @@ window.Player = (function() {
 			this.pos.y < 0 ||
 			this.pos.y + HEIGHT > this.game.WORLD_HEIGHT ||
 			this.checkCollisionWithPipes()) {
-				this.rotation = 130;
+			this.rotation = 130;
 			return this.game.gameover();
 		}
 	};
 
 	Player.prototype.checkCollisionWithPipes = function() {
-	return (this.pos.x > this.game.pipeBelow.pos.x && this.pos.x < this.game.pipeBelow.pos.x + 3
-					&& ((this.pos.y < this.game.pipeBelow.pos.y + 15) || (this.pos.y > this.game.pipeBelow.pos.y + 33))) ||
-					(this.pos.x > this.game.pipeAbove.pos.x && this.pos.x < this.game.pipeAbove.pos.x + 9
-					&& ((this.pos.y < this.game.pipeAbove.pos.y + 15) || (this.pos.y > this.game.pipeAbove.pos.y + 36)));
-};
+		return (this.pos.x > this.game.pipeBelow.pos.x &&
+			this.pos.x < this.game.pipeBelow.pos.x + 3 &&
+			((this.pos.y < this.game.pipeBelow.pos.y + 15) ||
+			(this.pos.y > this.game.pipeBelow.pos.y + 33))) ||
+			(this.pos.x > this.game.pipeAbove.pos.x &&
+			this.pos.x < this.game.pipeAbove.pos.x + 9 &&
+			((this.pos.y < this.game.pipeAbove.pos.y + 15) ||
+			(this.pos.y > this.game.pipeAbove.pos.y + 36)));
+	};
 	return Player;
 
 })();
