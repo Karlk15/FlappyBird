@@ -90,7 +90,7 @@ window.Game = (function() {
 		this.pipeAbove.reset();
 		this.score = 0;
 
-		document.querySelector('#score').innerHTML = 'Score: ' + this.score;
+		document.querySelector('.score').innerHTML = 'Score: ' + this.score;
 	};
 
 	/**
