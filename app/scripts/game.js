@@ -71,6 +71,7 @@ window.Game = (function() {
 		this.lastFrame = +new Date() / 1000;
 		window.requestAnimationFrame(this.onFrame);
 		this.isPlaying = true;
+		this.score = 0;
 	};
 
 
@@ -85,6 +86,7 @@ window.Game = (function() {
 		this.player.reset();
 		this.pipeBelow.reset();
 		this.pipeAbove.reset();
+		this.score = 0;
 	};
 
 	/**

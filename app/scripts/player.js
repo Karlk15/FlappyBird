@@ -43,7 +43,7 @@ window.Player = (function() {
 			this.velocity += this.gravity;
 			this.velocity *= 0.95;
 		}
-		
+
 		this.pos.y += this.velocity;
 
 		if(this.velocity < 0) {
@@ -54,6 +54,11 @@ window.Player = (function() {
 		}
 
 		this.checkCollisionWithBounds();
+		this.checkScore();
+		console.log(this.game.score);
+		if(this.game.pipeBelow.pos.x > 29.50 && this.game.pipeBelow.pos.x < 30.50) {
+			console.log(this.game.pipeBelow.pos.x);
+		}
 
 		// Update UI
 		this.el.css('transform', 'translateZ(0) translate(' + this.pos.x + 'em, ' + this.pos.y + 'em) rotate('+ this.rotation+ 'deg)' );
@@ -81,6 +86,17 @@ window.Player = (function() {
 			((this.pos.y < this.game.pipeAbove.pos.y + 15) ||
 			(this.pos.y > this.game.pipeAbove.pos.y + 36)));
 	};
+
+	Player.prototype.checkScore = function() {
+		if(this.game.pipeBelow.pos.x > this.pos.x &&
+			this.game.pipeAbove.pos.x < this.pos.x &&
+			this.game.pipeBelow.pos.x === 30 &&
+			this.game.isPlaying) {
+			this.game.score = this.game.score + 1;
+			return this.game.score;
+		}
+	};
+
 	return Player;
 
 })();

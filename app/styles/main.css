@@ -24,7 +24,7 @@
 	background-size: 700%;
 	background-image: url('../images/hat.png');
 	animation: play .05s steps(7) infinite;
-
+	transform: translateZ(0);
 }
 
 .Scoreboard {
@@ -44,6 +44,7 @@
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	transform: translateZ(0);
 }
 
 /**
@@ -107,6 +108,7 @@ body {
 	background: url('../images/ground1.png') repeat-x;
 	background-size: 36em;
 	animation: slide 7.5s linear infinite;
+	transform: translateZ(0);
 }
 
 .CityLandscape {
@@ -118,6 +120,7 @@ body {
 	background: url('../images/cityLandscape.png') repeat-x;
 	background-size: 108em;
 	animation: slideBG 60s linear infinite;
+	transform: translateZ(0);
 }
 
 .PipeBelow {
@@ -126,7 +129,7 @@ body {
 	bottom: -18.5em;
 	width: 11.5em;
 	height: 37em;
-	background: url('../images/micPipeBelow.png') repeat-x;
+	background: url('../images/micPipeBelow.png') no-repeat;
 	background-size: auto 100%;
 	transform: translateZ(0);
 }
@@ -137,7 +140,7 @@ body {
 	top: -18.5em;
 	width: 11.5em;
 	height: 37em;
-	background: url('../images/micPipeAbove.png') repeat-x;
+	background: url('../images/micPipeAbove.png') no-repeat;
 	background-size: auto 100%;
 	transform: translateZ(0);
 }
