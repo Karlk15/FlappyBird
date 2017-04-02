@@ -78,11 +78,11 @@ window.Player = (function() {
 		return (this.pos.x > this.game.pipeBelow.pos.x &&
 			this.pos.x < this.game.pipeBelow.pos.x + 3 &&
 			((this.pos.y < this.game.pipeBelow.pos.y + 15) ||
-			(this.pos.y > this.game.pipeBelow.pos.y + 40))) ||
+			(this.pos.y > this.game.pipeBelow.pos.y + 35))) ||
 			(this.pos.x > this.game.pipeAbove.pos.x &&
 			this.pos.x < this.game.pipeAbove.pos.x + 3 &&
 			((this.pos.y < this.game.pipeAbove.pos.y + 15) ||
-			(this.pos.y > this.game.pipeAbove.pos.y + 40)));
+			(this.pos.y > this.game.pipeAbove.pos.y + 35)));
 	};
 
 
