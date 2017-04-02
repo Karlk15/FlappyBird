@@ -100,6 +100,11 @@ window.Game = (function() {
 		this.DeathSound.play();
 		this.ResetAudio.play();
 		this.CameraSound.play();
+		if(this.highScore < this.score) {
+			this.highScore = this.score;
+		}
+		document.querySelector('.score').innerHTML = 'Score: ' + this.score;
+		document.querySelector('.highscore').innerHTML = 'High Score: ' + this.highScore;
 		// Should be refactored into a Scoreboard class.
 		var that = this;
 		var scoreboardEl = this.el.find('.Scoreboard');
