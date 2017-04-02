@@ -13,6 +13,7 @@
 	// Keep it off-screen
 	transform: translate(0, em(-400px));
 	transition: transform 0.5s;
+	transform: translateZ(0);
 }
 
 /**
@@ -28,12 +29,12 @@
 	font-size: inherit;
 	padding: em(4px) em(15px);
 	border: em(2px) solid white;
+	border-radius: em(12px);
 	background-image: url('../images/papaflash.gif');
 	cursor: pointer;
 }
 
 .Scoreboard-restartText {
-	// NOTICE: You'll lose 10% of your score if you don't change this style!
 	font-family: Helvetica, sans-serif;
 	font-size: em(24px);
 	color: white;
