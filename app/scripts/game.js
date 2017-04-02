@@ -69,7 +69,7 @@ window.Game = (function() {
 			this.president.play();
 			this.isPlaying = true;
 		}
-		else if (this.score === 22){
+		else if (this.score === 23){
 			this.president.pause();
 		}
 
