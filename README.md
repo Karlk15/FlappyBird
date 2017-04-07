@@ -15,3 +15,5 @@ npm install
 bower install
 grunt server
 ```
+-Demo-
+https://karlk15.github.io/gh-pages/
